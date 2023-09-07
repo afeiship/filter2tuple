@@ -26,11 +26,24 @@ console.log(even, odd);
 > Use reduce implement:
 
 ```js
+// impl1:
 function filter2tuple(arr, filterFn) {
   return arr.reduce((result, item) => {
     filterFn(item) ? result[0].push(item) : result[1].push(item);
     return result;
   }, [[], []]);
+}
+
+// impl2: 
+function filter2tuple(arr, filterFn) {
+  return arr.reduce(
+    (result, item) => {
+      const idx = Number(!filterFn(item));
+      result[idx].push(item);
+      return result;
+    },
+    [[], []]
+  );
 }
 ```
 

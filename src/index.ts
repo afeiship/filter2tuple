@@ -1,17 +1,14 @@
 declare var wx: any;
 
-type FilterFn = (item: any, index: number) => boolean;
+type FilterFn<T> = (item: T, index: number) => boolean;
 type Filter2TupleResult = [any[], any[]];
 
-function filter2tuple(inArray: any[], inFilterFn: FilterFn): Filter2TupleResult {
+function filter2tuple<T = any>(inArray: any[], inFilterFn: FilterFn<T>): Filter2TupleResult {
   const passed: any = [];
   const failed: any = [];
   inArray.forEach((item, index) => {
-    if (inFilterFn(item, index)) {
-      passed.push(item);
-    } else {
-      failed.push(item);
-    }
+    const ife = inFilterFn(item, index);
+    return ife ? passed.push(item) : failed.push(item);
   });
   return [passed, failed];
 }
