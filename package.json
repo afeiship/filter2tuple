@@ -1,6 +1,6 @@
 {
   "name": "@jswork/filter2tuple",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A function to split an array into two tuples based on a filtering condition.",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -52,5 +52,10 @@
       "@babel/preset-typescript"
     ]
   },
-  "keywords": []
+  "keywords": [
+    "array",
+    "filter",
+    "split",
+    "tuple"
+  ]
 }
