@@ -1,12 +1,24 @@
 declare var wx: any;
 
-const Filter2tuple = (): void => {
-  console.log('hello');
-};
+type FilterFn = (item: any, index: number) => boolean;
+type Filter2TupleResult = [any[], any[]];
+
+function filter2tuple(inArray: any[], filterFn: FilterFn): Filter2TupleResult {
+  const passed: any = [];
+  const failed: any = [];
+  inArray.forEach((item, index) => {
+    if (filterFn(item, index)) {
+      passed.push(item);
+    } else {
+      failed.push(item);
+    }
+  });
+  return [passed, failed];
+}
 
 // for commonjs es5 require
 if (typeof module !== 'undefined' && module.exports && typeof wx === 'undefined') {
-  module.exports = Filter2tuple;
+  module.exports = filter2tuple;
 }
 
-export default Filter2tuple;
+export default filter2tuple;
