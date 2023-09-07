@@ -32,7 +32,7 @@ Code released under [the MIT license](https://github.com/afeiship/filter2tuple/b
 [license-url]: https://github.com/afeiship/filter2tuple/blob/master/LICENSE.txt
 
 [size-image]: https://img.shields.io/bundlephobia/minzip/@jswork/filter2tuple
-[size-url]: https://github.com/afeiship/filter2tuple/blob/master/dist/filter2tuple.min.js
+[size-url]: https://github.com/afeiship/filter2tuple/blob/master/dist/index.min.js
 
 [download-image]: https://img.shields.io/npm/dm/@jswork/filter2tuple
 [download-url]: https://www.npmjs.com/package/@jswork/filter2tuple
