@@ -3,11 +3,11 @@ declare var wx: any;
 type FilterFn = (item: any, index: number) => boolean;
 type Filter2TupleResult = [any[], any[]];
 
-function filter2tuple(inArray: any[], filterFn: FilterFn): Filter2TupleResult {
+function filter2tuple(inArray: any[], inFilterFn: FilterFn): Filter2TupleResult {
   const passed: any = [];
   const failed: any = [];
   inArray.forEach((item, index) => {
-    if (filterFn(item, index)) {
+    if (inFilterFn(item, index)) {
       passed.push(item);
     } else {
       failed.push(item);
