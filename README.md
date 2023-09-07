@@ -15,7 +15,11 @@ npm install @jswork/filter2tuple
 ```js
 import filter2tuple from '@jswork/filter2tuple';
 
-// usage goes here.
+const numbers = [1, 2, 3, 4, 5, 6];
+const [even, odd] = filter2tuple(numbers, (item) => item % 2 === 0);
+
+console.log(even, odd);
+// [2, 4, 6] [1, 3, 5]
 ```
 
 ## license
