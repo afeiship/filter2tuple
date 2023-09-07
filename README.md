@@ -22,6 +22,18 @@ console.log(even, odd);
 // [2, 4, 6] [1, 3, 5]
 ```
 
+## other
+> Use reduce implement:
+
+```js
+function filter2tuple(arr, filterFn) {
+  return arr.reduce((result, item) => {
+    filterFn(item) ? result[0].push(item) : result[1].push(item);
+    return result;
+  }, [[], []]);
+}
+```
+
 ## license
 Code released under [the MIT license](https://github.com/afeiship/filter2tuple/blob/master/LICENSE.txt).
 
