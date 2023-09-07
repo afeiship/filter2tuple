@@ -1,9 +1,9 @@
 declare var wx: any;
 
-type FilterFn<T> = (item: T, index: number) => boolean;
-type Filter2TupleResult = [any[], any[]];
+export type Filter2TupleFn<T> = (item: T, index: number) => boolean;
+export type Filter2TupleResult = [any[], any[]];
 
-function filter2tuple<T = any>(inArray: any[], inFilterFn: FilterFn<T>): Filter2TupleResult {
+function filter2tuple<T = any>(inArray: any[], inFilterFn: Filter2TupleFn<T>): Filter2TupleResult {
   const passed: any = [];
   const failed: any = [];
   inArray.forEach((item, index) => {
